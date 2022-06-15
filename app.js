@@ -18,7 +18,7 @@ switch (pregunta) {
         calcularPrecioFinal (opcion1);
         break;
     case "2":
-        scalcularPrecioFinal (opcion2)
+        calcularPrecioFinal (opcion2)
         break;
     case "3":
         calcularPrecioFinal (opcion3);
