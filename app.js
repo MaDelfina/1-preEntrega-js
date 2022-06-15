@@ -1,43 +1,29 @@
-class Producto {
-    constructor(nombre, tipo, precio, cantidad) {
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.precio = parseFloat(precio);
-        this.cantidad = cantidad;
-        this.disponible = true;
-    }
-    sumaIva() {
-        return this.precio * 1.21;
-    }
-    vender() {
-        this.disponible = false;
-    }
+const descuento = 500;
+const iva = 0.21;
+const opcion1 = 3000;
+const opcion2 = 1500;
+const opcion3 = 1500;
+
+let pregunta = prompt("Selecciona los productos:\n1: enteriza = $3000\n 2: corpiño = $1500\n 3: bombacha = $1500");
+
+let sumaTotal = 0;
+
+function calcularPrecioFinal (precio) {
+    sumaTotal = precio * iva - descuento;
+        alert("Precio final " + sumaTotal);
 }
 
-let arrayProducto = [];
-do {
-    let comprobacion = prompt("Ingrese el nombre del producto o FIN para terimnar")
-    if (comprobacion === "FIN" || comprobacion === "Fin") {
-        Break;
-    } else {
-        nombreProd = comprobacion;
-        let precioProd = prompt("Ingrese el precio del producto");
-        let cantidadProd = prompt("Ingrese la cantidad de productos");
-        arrayProducto.push(new Producto(nombreProd, precioProd, cantidadProd));
-    }
-}while (comprobacion != "Fin" || comprobacion != "FIN")
-
-console.log(arrayProducto);
-
-for (let producto of arrayProducto) {
-    document.write(producto.nombre);
-    document.write(producto.tipo);
-    document.write(producto.precio);
-    document.write(producto.cantidad);
-    document.write(producto.sumaIva);
-
-    console.log(producto.nombre);
-    console.log(producto.tipo);
-    console.log(producto.cantidad);
-    console.log(producto.sumaIva());
+switch (pregunta) {
+    case "1":
+        calcularPrecioFinal (opcion1);
+        break;
+    case "2":
+        scalcularPrecioFinal (opcion2)
+        break;
+    case "3":
+        calcularPrecioFinal (opcion3);
+        break;
+    default:
+        alert("error");
+        break;
 }
